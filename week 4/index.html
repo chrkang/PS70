@@ -80,41 +80,41 @@ So with that in mind, I totally googled it and found an Arduino forum where some
 
 <code>
   //struggled with getting a servo motor to run simultaneously with LEDs - googled and came across arduino forum 
-//(https://forum.arduino.cc/t/how-to-fade-an-led-up-and-down-without-using-delay/12069/7) 
+//(https://forum.arduino.cc/t/how-to-fade-an-led-up-and-down-without-using-delay/12069/7) <br>
 
 
-#include < Servo.h >
+#include < Servo.h > <br>
 
-Servo myservo; //create servo object to control the servo 
+Servo myservo; //create servo object to control the servo <br>
 
-#define servoPin1 4
+#define servoPin1 4 <br>
 
-int value1, value2, value3; //
-int ledpin = 6; //LED to digital pin 6
-int ledpin2 = 3; //LED to digital pin 3      
+int value1, value2, value3; // <br>
+int ledpin = 6; //LED to digital pin 6 <br>
+int ledpin2 = 3; //LED to digital pin 3 <br>     
 
-long time =0; //long variable
+long time =0; //long variable <br>
 
-int amplitude = 128; //cos wave goes from -1 to 1 - amplitude is first half 0 to 1?
-int offset = 127; //offset accounts for cos wave being -1 - makes it so LED runs 1 - 255 instead 
-int period = 2500; //amount of time for entire fade cycle
-int displace = 625; //makes it run opposite of first LED
+int amplitude = 128; //cos wave goes from -1 to 1 - amplitude is first half 0 to 1? <br>
+int offset = 127; //offset accounts for cos wave being -1 - makes it so LED runs 1 - 255 instead  <br>
+int period = 2500; //amount of time for entire fade cycle <br>
+int displace = 625; //makes it run opposite of first LED <br>
 
-void setup() {
+void setup() { <br>
   // put your setup code here, to run once:
-myservo.attach(4);
-}
+myservo.attach(4); <br>
+} <br>
 
-void loop() {
-  // put your main code here, to run repeatedly:
-time = millis();
-value1 = amplitude+offset*cos(2*PI/period*time);
-value2 = amplitude+offset*cos(2*PI/period*(displace-time));
-value3 = 90+90*cos(2*PI/period*time);
-analogWrite(ledpin, value1);
-analogWrite(ledpin2, value2);
-myservo.write(value3);
-}
+void loop() { <br>
+  // put your main code here, to run repeatedly: <br>
+time = millis(); <br>
+value1 = amplitude+offset*cos(2*PI/period*time); <br>
+value2 = amplitude+offset*cos(2*PI/period*(displace-time)); <br>
+value3 = 90+90*cos(2*PI/period*time); <br>
+analogWrite(ledpin, value1); <br>
+analogWrite(ledpin2, value2); <br>
+myservo.write(value3); <br>
+} <br>
 
 </code>
 
