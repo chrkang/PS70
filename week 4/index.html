@@ -69,10 +69,10 @@ body {
  <br>
  I also wanted to incorporate LED lights because I like the way they look. Okay-- onto the process: <br>
 
-Biggest hurdle was coding for sure - basically I decided I just wanted to like, FULLY understand and play around with combining the library examples. I wanted to incorporate Servo sweep with LED PWM fades, but when I was working with the Arduino Uno examples, I had a lot of issues with the delay function. Should've gotten a video of this, but basically when I combined the Servo sweep code with the LED PWM fade, they wouldn't run simultaneously, and the delay really just gummed it up. Found out this is basically because this just how Arduino Uno works, and set on to the next hurdle: trying to understand how to code without using delay. 
+Biggest hurdle was coding for sure - basically I decided I just wanted to like, FULLY understand and play around with combining the library examples. I wanted to incorporate Servo sweep with LED PWM fades, but when I was working with the Arduino Uno examples, I had a lot of issues with the delay function, as the examples wouldn't run simultaneously, and the delay really just gummed it up. Found out this is basically because this just how Arduino Uno works, and set on to the next hurdle: trying to understand how to code without using delay. 
 <br>
 
-I tried out class functions but still don't really understand them? And I knew that I wanted the code to be based off of millis() and not delay() (the metaphor I had in my mind was that millis() was a clock and the LEDs/servo were the hands of the clock - I guess if you added in delay() it would be like. Two separate clocks that only worked if the other one stopped.) Then I was thinking about how I wanted the LED fade to be smoother, and was wondering how to make it undulate smoothly, like a wave. 
+I tried out class() but still don't feel completely confident that I know how to utilize it very effectively... And I knew that I wanted the code to be based off of millis() and not delay(). Then I was thinking about how I wanted the LED fade to be smoother, and was wondering how to make it undulate smoothly, like a wave. I did think of using the cosine function but was struggling with the math. <br>
 
 So with that in mind, I totally googled it and found an Arduino forum where someone had the same problem with delays, and someone else provided code on how to do an LED fade with cos/sin functions. But I did add in my own servo code on how to get the servo motor motion to undulate in time, so. Kind of a cherry on top situation. 
 
@@ -122,8 +122,40 @@ myservo.write(value3);
 
 And it worked, I think?
 <br> <br>
+<video width="600" height="600" controls>
+  <source src="45sec.mp4" type="video/mp4">
+</video> <br> <br>
+
+<b> How to Make this Very Loud and Not exactly good to use as a light source Light Wave Lamp </b> <br>
+
+Here are the materials I used, ordered from most to least accessible : <br>
+-Hot glue <br>
+-Plastic straw <br>
+-Microcontroller, wires, breadboard<br>
+-2 LED pins (one green, one red) <br>
+-Servo motor <br>
+-Blue archival cardboard <br>
+-Miniature sturdy cardboard tube that you saved from your order of neodymium magnets last July <br>
+ <br>
+
+ <b> Assembly </b> <br>
+
+ Fusion360 file for the base/head: <a href="cyl v2.dxf" download> File </a> <br>
+
+Lasercut files into cardboard - minimum 2 copies of the long sides, and 10 copies of the half circle sides. I will now refer to the pressfit object a half/halves. <br>
+
+Stuff wires down cardboard tube, then connect to breadboard/microcontroller (following the code, pin 3 and 6 for LEDs, pin 4 for the servo.), then cut half circles into the base halves (best practice would probably have been to also model that in Fusion) <br> <br>
+<img src="innard.jpg" alt="nightmare wire jumble" /img> <br>
+
+Attach servo motor to the top of the top halves, cut about 0.5" of a straw/plastic tube, fill with hot glue and attach to top of motor (is this the best practice?), then attach the last 2 half circle sides. <br> <br>
+
+<img src="p1.jpg" alt="detail of light" /img>
+<img src="p2.jpg" alt="detail of light- red LED with green LED" /img> <br> 
 
 <img src="circuit.jpg" alt="drawing of circuit" /img>
+
+<br>
+
 </p>
 
 </xmp>
